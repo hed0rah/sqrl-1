@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1134 104" width="1134" height="104" role="img" aria-label="Signal flow: keys to the NOTE engine, to the SOUND, through the part's effects to the shared effects and out" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11.5">
+<rect width="1134" height="104" fill="#07080A" rx="6"/>
+<defs><marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#7D858D"/></marker></defs>
+<rect x="2" y="20" width="150" height="64" rx="4" fill="#121418" stroke="#7D858D"/>
+<text x="77.0" y="49.0" text-anchor="middle" fill="#E6E1D3" font-weight="bold">keys</text>
+<text x="77.0" y="66.0" text-anchor="middle" fill="#7D858D">27 keys</text>
+<path d="M154 52.0H195" stroke="#7D858D" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="175.0" y="14" text-anchor="middle" fill="#7D858D" font-size="10">key, down / up</text>
+<rect x="198" y="20" width="150" height="64" rx="4" fill="#121418" stroke="#6AA9DC"/>
+<text x="273.0" y="49.0" text-anchor="middle" fill="#E6E1D3" font-weight="bold">NOTE</text>
+<text x="273.0" y="66.0" text-anchor="middle" fill="#7D858D">makes the notes</text>
+<path d="M350 52.0H391" stroke="#7D858D" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="371.0" y="14" text-anchor="middle" fill="#7D858D" font-size="10">note on / off</text>
+<rect x="394" y="20" width="150" height="64" rx="4" fill="#121418" stroke="#8FBF6A"/>
+<text x="469.0" y="49.0" text-anchor="middle" fill="#E6E1D3" font-weight="bold">SOUND</text>
+<text x="469.0" y="66.0" text-anchor="middle" fill="#7D858D">plays them</text>
+<path d="M546 52.0H587" stroke="#7D858D" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="567.0" y="14" text-anchor="middle" fill="#7D858D" font-size="10">audio</text>
+<rect x="590" y="20" width="150" height="64" rx="4" fill="#121418" stroke="#E6E1D3"/>
+<text x="665.0" y="49.0" text-anchor="middle" fill="#E6E1D3" font-weight="bold">SHAPE, FX, INSERT</text>
+<text x="665.0" y="66.0" text-anchor="middle" fill="#7D858D">the part&#x27;s own</text>
+<path d="M742 52.0H783" stroke="#7D858D" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="763.0" y="14" text-anchor="middle" fill="#7D858D" font-size="10">sends</text>
+<rect x="786" y="20" width="150" height="64" rx="4" fill="#121418" stroke="#E0894A"/>
+<text x="861.0" y="49.0" text-anchor="middle" fill="#E6E1D3" font-weight="bold">DELAY REVERB CHORUS</text>
+<text x="861.0" y="66.0" text-anchor="middle" fill="#7D858D">shared by every part</text>
+<path d="M938 52.0H979" stroke="#7D858D" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="959.0" y="14" text-anchor="middle" fill="#7D858D" font-size="10">mix</text>
+<rect x="982" y="20" width="150" height="64" rx="4" fill="#121418" stroke="#7D858D"/>
+<text x="1057.0" y="49.0" text-anchor="middle" fill="#E6E1D3" font-weight="bold">out</text>
+<text x="1057.0" y="66.0" text-anchor="middle" fill="#7D858D">MASTER</text>
+</svg>

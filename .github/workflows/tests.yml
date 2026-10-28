@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# the firmware's tests on every push and pull request: both builds (SQRL-1 and stock Felucca), then the full suite,
+# which also checks the manual against the firmware and every file's licence header. Public inputs only: JieLi's
+# toolchain (pinned and checked by tools/get_toolchain.sh) and the AC79 SDK at its release tag; no secrets
+name: tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45                         # (build.sh and run_tests.sh default to ~/.jieli and ~/fw-AC79_AIoT_SDK)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install Pillow fonttools
+      - name: cache the toolchain and the SDK
+        id: jieli
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.jieli
+            ~/fw-AC79_AIoT_SDK
+          key: jieli-20250324.1-sdk-AC79NN_SDK_V1.2.1_2023-12-13
+      - name: toolchain and SDK
+        if: steps.jieli.outputs.cache-hit != 'true'
+        run: |
+          tools/get_toolchain.sh
+          git clone --depth 1 --branch AC79NN_SDK_V1.2.1_2023-12-13 \
+              https://gitee.com/Jieli-Tech/fw-AC79_AIoT_SDK.git ~/fw-AC79_AIoT_SDK
+      - name: build SQRL-1
+        run: FELUCCA_SHELL=1 ./build.sh
+      - name: build stock Felucca
+        run: ./build.sh
+      - name: tests
+        run: sh tests/run_tests.sh

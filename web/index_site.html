@@ -1,0 +1,90 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-only
+     Copyright (C) 2026 hed0rah
+     The site's landing page; make_site.py fills in the installer's style, the version and the links. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQRL-1</title>
+<meta name="description" content="SQRL-1 is free GPL-3.0 firmware for the M-VAVE FM-1, built on Felucca. Install it from desktop Chrome or Edge over USB.">
+<link rel="canonical" href="/*SITE*/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="databurn">
+<meta property="og:title" content="SQRL-1 for the M-VAVE FM-1">
+<meta property="og:description" content="SQRL-1 is free GPL-3.0 firmware for the M-VAVE FM-1, built on Felucca. Install it from desktop Chrome or Edge over USB.">
+<meta property="og:url" content="/*SITE*/">
+<meta property="og:image" content="/*SITE*/og-sqrl-1.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The SQRL-1 squirrel lockup and the words SQRL-1 for the M-VAVE FM-1">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SQRL-1 for the M-VAVE FM-1">
+<meta name="twitter:description" content="Free GPL-3.0 firmware for the M-VAVE FM-1, installed from Chrome or Edge over USB.">
+<meta name="twitter:image" content="/*SITE*/og-sqrl-1.png">
+<meta name="twitter:image:alt" content="The SQRL-1 squirrel lockup and the words SQRL-1 for the M-VAVE FM-1">
+/*STYLE*/
+<style>
+  .links { list-style: none; padding: 0; margin: 0 0 24px; }
+  .links li { margin: 0 0 8px; }
+  .links a { font-weight: 600; }
+  h2 { font-size: 16px; margin: 32px 0 8px; }
+  .screens { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 16px; }
+  .screens img { width: 180px; height: 180px; image-rendering: pixelated; border-radius: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <button class="lang" id="lang" hidden>日本語</button>
+  <h1><span class="lockup" role="img" aria-label="SQRL-1"></span></h1>
+  <p class="maker">databurn</p>
+  <p data-t="what">SQRL-1 is free firmware for the M-VAVE FM-1, built on Felucca. It installs from the browser over USB, and the FM-1 can go back to its official firmware.</p>
+  <p data-t="pairs">You play a pair: a SOUND, which makes the tone, and a NOTE engine, which decides the notes. Hold HOME and the octave from C4 to C5 becomes the wheel: a white key picks the SOUND, a black key the NOTE engine. The SOUNDs include six-operator FM, a drawn wave, a brass model, sung speech, a virtual analog, phase distortion, physical models and drum kits; the NOTE engines play chords, a beat of lanes, a line of lanes over it, a cellular automaton, the Tonnetz, a mutating loop and a strum plate.</p>
+  <div class="screens">
+    <img src="manual/img/shell_wheel.png" width="240" height="240" alt="The FM-1's screen with the wheel open: the SOUNDs in a ring, FM6 in front, the NOTE engines below">
+    <img src="manual/img/chord_main.png" width="240" height="240" alt="The FM-1's screen playing CHORD: G7 drawn on the circle of fifths">
+  </div>
+  <p class="small"><span data-t="version">Version</span> /*VERSION*/ · <a href="manual/start.html" data-t="start">Getting started</a></p>
+  <ul class="links">
+    <li><a href="install/" data-t="install">Install</a> <span class="small" data-t="installNote">(desktop Chrome or Edge)</span></li>
+    <li><a href="manual/" data-t="manual">Manual</a></li>
+    <li><a href="editor/" data-t="editor">Editor</a></li>
+    <li><a href="sheet/" data-t="sheet">Quick sheet</a> <span class="small" data-t="sheetNote">(every combination on one sheet, to print both sides)</span></li>
+    <li><a href="https://github.com/hed0rah/sqrl-1" target="_blank" rel="noopener">GitHub</a> <span class="small" data-t="githubNote">(source, releases, issues)</span></li>
+  </ul>
+  <h2 data-t="backTitle">Back to the official firmware</h2>
+  <p class="small"><span data-t="back">Download official V15, FM-1.fwsc, from M-VAVE's download page (FM-1, "PC Firmware") and use the installer's "Return to official V15": it checks the file, saves a complete backup, then installs it. M-VAVE's own updater, M-UPGRADE, does not see an FM-1 running SQRL-1; it works again once the FM-1 is back on V15.</span>
+    <a href="install/#official" data-t="backMore">Details</a></p>
+  <p class="small">SQRL-1 by databurn. Built on Felucca by Leo Kuroshita (@kurogedelic), <a href="https://hugelton.com" target="_blank" rel="noopener">Hügelton Instruments</a>.
+    <span data-t="license">GPL-3.0, no warranty. Source:</span> <a href="/*SOURCE*/" target="_blank" rel="noopener">GitHub</a>.<br>
+    M-VAVE and FM-1 are trademarks of their respective owners. SQRL-1 is not affiliated with or endorsed by M-VAVE or Hügelton Instruments.</p>
+</main>
+<script>
+// the page reads in English without JavaScript; this switches it to Japanese and back
+const JA = {
+  what: "SQRL-1 は M-VAVE FM-1 用の無料のファームウェアで、Felucca をもとに作られています。ブラウザから USB でインストールでき、公式ファームウェアに戻すこともできます。",
+  pairs: "演奏するのはペアです。音色を作る SOUND と、どの音を弾くかを決める NOTE エンジンの組み合わせです。HOME を押したままにすると C4 から C5 のオクターブがホイールになり、白鍵で SOUND を、黒鍵で NOTE エンジンを選びます。SOUND には 6 オペレーター FM、描いた波形、金管の物理モデル、歌う音声、バーチャルアナログ、フェイズディストーション、物理モデル、ドラムキットがあり、NOTE エンジンはコード、レーンのビート、その上のレーンのライン、セル・オートマトン、トネッツ、変化するループ、ストラムプレートを弾きます。",
+  start: "はじめに（英語）",
+  version: "バージョン", install: "インストール", installNote: "（パソコンの Chrome か Edge）", manual: "マニュアル（英語）",
+  editor: "エディタ", sheet: "早見表（英語）", sheetNote: "（ボタンの組み合わせを 1 枚に。両面に印刷できます）", githubNote: "（ソース、リリース、不具合の報告）", backTitle: "公式ファームウェアに戻す",
+  back: "M-VAVE のダウンロードページ（FM-1 の「PC Firmware」）から公式 V15 の FM-1.fwsc を入手し、インストーラーの「公式V15に戻す」を使ってください。ファイルを確かめ、完全なバックアップを保存してから書き込みます。M-VAVE のアップデーター M-UPGRADE は SQRL-1 の FM-1 を認識しません。公式 V15 に戻したあとは通常どおり使えます。",
+  backMore: "手順", license: "GPL-3.0、無保証。ソース:",
+};
+const EN = {};
+document.querySelectorAll("[data-t]").forEach((e) => { EN[e.dataset.t] = e.textContent; });
+const button = document.getElementById("lang");
+let lang = "en";
+function show(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-t]").forEach((e) => { e.textContent = (l === "ja" ? JA : EN)[e.dataset.t]; });
+  button.textContent = l === "ja" ? "English" : "日本語";
+}
+button.hidden = false;
+button.addEventListener("click", () => show(lang === "ja" ? "en" : "ja"));
+if ((navigator.language || "").toLowerCase().startsWith("ja")) show("ja");
+</script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-only
+     Copyright (C) 2026 Leo Kuroshita (@kurogedelic), Hügelton Instruments -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQRL-1 installer</title>
+<meta name="description" content="Install SQRL-1, free GPL-3.0 firmware for the M-VAVE FM-1, from Chrome or Edge over USB. The page also takes the FM-1 back to official V15.">
+<link rel="canonical" href="/*SITE*/install/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="databurn">
+<meta property="og:title" content="SQRL-1 installer for the M-VAVE FM-1">
+<meta property="og:description" content="Install SQRL-1, free GPL-3.0 firmware for the M-VAVE FM-1, from Chrome or Edge over USB. The page also takes the FM-1 back to official V15.">
+<meta property="og:url" content="/*SITE*/install/">
+<meta property="og:image" content="/*SITE*/og-sqrl-1.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The SQRL-1 squirrel lockup and the words SQRL-1 for the M-VAVE FM-1">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SQRL-1 installer for the M-VAVE FM-1">
+<meta name="twitter:description" content="Free GPL-3.0 firmware for the M-VAVE FM-1, installed from Chrome or Edge over USB.">
+<meta name="twitter:image" content="/*SITE*/og-sqrl-1.png">
+<meta name="twitter:image:alt" content="The SQRL-1 squirrel lockup and the words SQRL-1 for the M-VAVE FM-1">
+<style>
+  :root { --bg: #fff; --fg: #000; --dim: #777; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #000; --fg: #fff; --dim: #888; }
+  }
+  :root[data-theme="dark"] { --bg: #000; --fg: #fff; --dim: #888; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 520px; margin: 0 auto; padding: 48px 16px; }
+  h1 { margin: 0 0 4px; }
+  .lockup { display: block; width: 150px; aspect-ratio: 217 / 214; background: var(--fg);
+            -webkit-mask: url("/*LOCKUP*/") center / contain no-repeat; mask: url("/*LOCKUP*/") center / contain no-repeat; }
+  .maker { color: var(--dim); font-size: 13px; letter-spacing: .2em; margin: 0 0 32px; }
+  .lang { float: right; font-size: 13px; color: var(--dim); cursor: pointer; text-decoration: underline; background: none; padding: 0; color: var(--dim); }
+  p { margin: 0 0 16px; }
+  button { font: inherit; background: var(--fg); color: var(--bg); border: 0; padding: 8px 20px; cursor: pointer; }
+  button:disabled { opacity: .3; cursor: default; }
+  #status { margin-top: 16px; min-height: 1.6em; }
+  .small { color: var(--dim); font-size: 13px; }
+  progress { width: 100%; height: 8px; margin-top: 16px; }
+  .console { margin: 16px 0; }
+  .console:has(#log:empty) { display: none; }
+  #log { color: var(--dim); font: 12px/1.5 ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap;
+         margin: 0; height: 160px; overflow: auto; border: 1px solid var(--dim); padding: 8px; }
+  #copy { font-size: 13px; padding: 2px 12px; margin-top: 8px; }
+  .wheel-row { margin: 8px 0 16px; }
+  .wheel-key { display: inline-block; margin: 0 12px 8px 0; font-size: 13px; }
+  .wheel-key select { font: inherit; }
+  .wheel-buttons button { margin: 0 8px 8px 0; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <button class="lang" id="lang"></button>
+  <h1><span class="lockup" role="img" aria-label="SQRL-1"></span></h1>
+  <p class="maker">databurn</p>
+  <noscript><p>This installer needs JavaScript and desktop Chrome or Edge.<br>
+    このインストーラーには JavaScript と、パソコンの Chrome か Edge が必要です。</p></noscript>
+  <p class="small">SQRL-1 /*VERSION*/<span id="notes-item"> · <a id="notes" href="/*NOTES*/" target="_blank" rel="noopener" data-t="notes"></a></span>
+    · <a href="../manual/" data-t="manual"></a></p>
+  <p data-t="intro"></p>
+  <p data-t="warn"></p>
+  <p class="small" data-t="perm"></p>
+  <p class="small" data-t="direct"></p>
+  <p class="small" data-t="beta"></p>
+  <p class="small"><span data-t="brick"></span>
+    <a href="https://github.com/kurogedelic/FM-1-transporter" target="_blank" rel="noopener">FM-1-transporter</a></p>
+  <p class="small" id="running"></p>
+  <p><button id="go" disabled data-t="install"></button></p>
+  <p class="small"><span data-t="source"></span> <a href="/*SOURCE*/" target="_blank" rel="noopener">/*SOURCE_LABEL*/</a>
+    · <span data-t="basedOn"></span> <a href="https://github.com/hugelton/Felucca" target="_blank" rel="noopener">Felucca</a> (Leo Kuroshita, Hügelton Instruments)
+    · <a href="../firmware/SHA256SUMS">SHA256SUMS</a></p>
+  <details id="wheel" style="margin-top:24px">
+    <summary data-t="wheelTitle"></summary>
+    <p class="small" data-t="wheelAbout"></p>
+    <p><button id="wheel-read" data-t="wheelRead"></button></p>
+    <div id="wheel-form"></div>
+    <p class="wheel-buttons" id="wheel-buttons" hidden><button id="wheel-save" data-t="wheelSave"></button><button id="wheel-factory" data-t="wheelFactory"></button></p>
+    <p class="small" id="wheel-status"></p>
+  </details>
+  <details id="official" style="margin-top:24px">
+    <summary data-t="stockTitle"></summary>
+    <p class="small" data-t="back"></p>
+    <p class="small"><a href="https://www.m-vave.com/download" target="_blank" rel="noopener">M-VAVE Downloads</a></p>
+    <p class="small" data-t="backFile"></p>
+    <p><label><span data-t="stockFile"></span><br><input id="stock-file" type="file" accept=".fwsc"></label></p>
+    <p><button id="stock-go" disabled data-t="stockGo"></button></p>
+    <p class="small" data-t="stockBackup"></p>
+    <p class="small"><label><input id="stock-recovery" type="checkbox"> <span data-t="stockRecovery"></span></label></p>
+  </details>
+  <progress id="bar" max="100" value="0" hidden aria-labelledby="status"></progress>
+  <p id="status" role="status" aria-live="polite"></p>
+  <div class="console"><pre id="log"></pre><button id="copy" data-t="copy"></button>
+    <a class="small" href="https://github.com/hed0rah/sqrl-1/issues" target="_blank" rel="noopener" data-t="issues"></a></div>
+  <p><a href="../editor/" data-t="editor"></a></p>
+  <p><a href="https://github.com/hed0rah/sqrl-1/issues" target="_blank" rel="noopener" data-t="issues"></a></p>
+  <p class="small">SQRL-1 by databurn: the shell, modes and sounds. Built on Felucca by Leo Kuroshita (@kurogedelic), <a href="https://hugelton.com" target="_blank" rel="noopener">Hügelton Instruments</a>, with its CrispyZebra waveforms, drum voices, Sample Pack and Fukiai icons (MIT).<br>
+    Font: Inter Tight (The Inter Project Authors, SIL OFL 1.1). Samples: Versilian Studios VSCO-2 Community Edition and VCSL (CC0 1.0).<br>
+    FM6 engine: msfa from Dexed (Google Inc., Pascal Gauthier, Apache-2.0). The package also holds three JieLi AC79 SDK files, uboot.boot, cfg_tool.bin and eq_cfg_hw.bin (JieLi Technology, Apache-2.0). <a href="../firmware/LICENSING.txt">Licences</a>: <a href="../firmware/LICENSE.txt">GPL-3.0</a>, <a href="../firmware/LICENSES/Apache-2.0.txt">Apache-2.0</a>, <a href="../firmware/LICENSES/">all</a>.<br>
+    M-VAVE and FM-1 are trademarks of their respective owners. SQRL-1 is not affiliated with or endorsed by M-VAVE or Hügelton Instruments.<br>
+    <span data-t="license"></span> <a href="/*SOURCE*/" target="_blank" rel="noopener">/*SOURCE_LABEL*/</a></p>
+</main>
+<script type="module">
+/*LIB*/
+const $ = (id) => document.getElementById(id);
+const TEXT = {
+  ja: {
+    intro: "FM-1 を USB で接続してください。パソコンの Chrome か Edge で使えます。",
+    warn: "書き込み中は USB を抜かず、「完了しました」と出るまでこのタブを前面に表示したままにしてください。",
+    perm: "ブラウザが「MIDI デバイスの制御と再プログラム」の許可を求めます。許可してください。この方法でファームウェアを FM-1 に送ります。",
+    install: "インストール", other: "English", ready: "インストールできます: SQRL-1 ", copy: "ログをコピー", copied: "コピーしました",
+    editor: "エディタ（インストール後、パソコンから音色やシーケンスを編集）",
+    manual: "マニュアル（英語）", notes: "リリースノート（英語）", issues: "不具合の報告",
+    source: "ソース:", basedOn: "ベース:",
+    direct: "USB ケーブルはパソコンに直接つないでください。Probe や Transporter などの機材は不要です。",
+    brick: "FM-1 は消去の前にファイル全体を確認し、ファームウェアの領域だけを書き換えます。書き込みが途中で止まっても、もう一度「インストール」を押せば続きから再開するように作られています。それでも起動しなくなった場合は、FM-1 Transporter（RP2040 ボードを FM-1 の USB 線につなぐ自作ツール）で復旧します:",
+    beta: "SQRL-1 は databurn による FM-1 用ファームウェアです。M-VAVE が作ったものでも、M-VAVE が認めたものでもありません。無保証です。自己責任でお使いください。",
+    back: "公式ファームウェアに戻すには、M-VAVE のダウンロードページ（FM-1 の「PC Firmware」）から公式 V15 の FM-1.fwsc を入手し、下で選んでください。このページが V15 であることを確かめ、完全なバックアップを保存してから書き込みます。",
+    backFile: "受け付けるのは未変更の V15 だけです。ファイルはこのブラウザ内で確認し、サーバーへは送りません。M-VAVE のアップデーター M-UPGRADE（「PC Software」）は SQRL-1 の FM-1 を認識しないため、まずこのボタンで V15 に戻してください。戻したあとは M-UPGRADE も通常どおり使えます。Windows では、M-UPGRADE を使う前に Chrome や Edge を閉じてください。",
+    stockTitle: "公式V15に戻す", stockFile: "公式FM-1.fwsc", stockGo: "バックアップして公式V15へ戻す",
+    stockBackup: "現在の曲・保存曲・音色バンク・サンプル・設定を先に保存します。全体バックアップ非対応版は、SQRL-1を更新してから行ってください。復元はSQRL-1を再インストールしてエディタから行います。",
+    stockRecovery: "更新中断の再開：全体バックアップはすでにパソコンへ保存済み",
+    stockValid: "公式V15を確認しました", stockConfirm: "全体バックアップファイルをパソコンに保存できましたか？ 続けると公式V15へ戻します。SQRL-1の曲は公式V15では開けません。",
+    stockNeedBackup: "書き込みモードからはバックアップできません。保存済みバックアップがある場合だけ、更新中断の再開にチェックしてください。",
+    stockUnsupported: "このファームウェアは全体バックアップに対応していません。先に最新の SQRL-1 をインストールしてください。",
+    backup: "全体バックアップ保存中 ", stockError: "公式ファイルを確認できません: ",
+    nomidi: "このブラウザでは使えません。パソコンの Chrome か Edge で開いてください。", loadfail: "読み込めませんでした: ",
+    browser: "Firefox と Safari ではインストールできません。パソコンの Chrome か Edge で開いてください。",
+    mobile: "スマートフォンやタブレットではインストールできません。パソコンの Chrome か Edge で開いてください。",
+    badsum: "ダウンロードしたファイルがチェックサムと一致しないため、インストールしていません。ページを再読み込みしてください。繰り返し起きる場合は「不具合の報告」から知らせてください。",
+    checking: "FM-1 を確認中", resuming: "中断した SQRL-1 のインストールを再開します", resumingStock: "中断した公式V15への書き込みを再開します",
+    busy: "別のタブがすでに FM-1 を更新しています。",
+    running: "FM-1 のファームウェア: {now}、このページ: {page}", official: "公式 V",
+    replaceFelucca: "この FM-1 では Felucca が動いています。インストールすると、ファームウェアが SQRL-1 に置き換わります。SQRL-1 は Felucca の保存データをそのまま読みます。大事な音楽があれば、先に Felucca のエディターで完全なバックアップを取ってください。続けますか？",
+    onOpen: "この FM-1 では M-VAVE の FM1 Open が動いています。その上に SQRL-1 をインストールすると、FM1 Open のプロジェクトとサンプルが消えます。また、この組み合わせはまだ確かめていません。先に M-VAVE のワークベンチでプロジェクトとサンプルをバックアップし、そこで「Restore original V15」を使って公式 V15 に戻してから、SQRL-1 をインストールしてください。",
+    onOpenStock: "この FM-1 では M-VAVE の FM1 Open が動いています。公式 V15 に戻すには、M-VAVE のワークベンチ（Restore original V15）を使ってください。",
+    replace: "この FM-1 では SQRL-1 が動いていません。インストールすると、ファームウェアが SQRL-1 に置き換わります。公式 V15 に保存したプリセットやパターンが残るかは、まだ確かめていません。このページではそれらをバックアップできません。続けますか？",
+    start: "開始します", verify: "確認中", loader: "書き込みモードに切り替え中", write: "書き込み中",
+    reboot: "再起動中", done: "完了しました", doneSqrl: "完了しました。FM-1 は SQRL-1 で動いています。HOME を押したままにするとホイールが開きます。最初の 5 分の手順は、マニュアルの「はじめに」（英語）にあります。", stopped: "途中で止まりました。USB を挿し直してもう一度押してください。",
+    error: "エラー: ",
+    denied: "MIDI（SysEx）の使用が許可されませんでした。アドレスバーのサイト設定で MIDI を許可して、もう一度押してください。",
+    notfound: "FM-1 が見つかりません。データ通信用の USB ケーブルでコンピューターに直接つなぎ、Bitwig などの DAW や FM-1 の MIDI ポートを使う他のアプリを閉じるかブラウザを再起動してから、もう一度インストールを押してください。",
+    model: "接続されている機器は FM-1 ではありません。",
+    lost: "USB の接続が切れました。挿し直してもう一度押してください。",
+    noloader: "書き込みモードの FM-1 が見つかりません。USB を挿し直すか、コンピューターを再起動してから、もう一度インストールを押してください（終わるまで書き込みモードのままです）。",
+    noreturn: "FM-1 が戻ってきません。電源を入れ直してください。書き込みモードで起動した場合は、もう一度「インストール」を押してください。画面が暗いままなら、上の復旧の説明を読み、「不具合の報告」から知らせてください。",
+    mismatch: "書き込みは終わりましたが、FM-1 が別のバージョンを報告しています。ログをコピーして「不具合の報告」から知らせてください。報告されたバージョン: ",
+    badpkg: "インストールするファイルが壊れています。ページを再読み込みしてください。",
+    leave: "書き込み中です。ページを閉じないでください。",
+    license: "GPL-3.0、無保証。ソース:",
+    stockLost: "途中で止まりました。USB を挿し直し、「更新中断の再開」にチェックして「バックアップして公式V15へ戻す」をもう一度押してください。（「インストール」を押すと SQRL-1 に戻ります）",
+    stockNotSqrl: "FM-1 が応答しません。SQRL-1 を動かした状態で、Bitwig などの DAW や FM-1 の MIDI ポートを使う他のアプリを閉じるかブラウザを再起動してから、もう一度押してください。公式V15や古い Felucca が動いている場合、この手順は不要です。",
+    badreq: "FM-1 から想定外の要求がありました。ログをコピーして「不具合の報告」から知らせてください。",
+    wheelTitle: "ホイールの設定",
+    wheelAbout: "HOME を押している間に出るホイールの黒鍵に、どの NOTE エンジンを置くかを選びます。白鍵は 8 つの SOUND で固定です。本体では、ホイールを開いて GLO を押しながら黒鍵を押します。",
+    wheelRead: "FM-1 から読み込む", wheelSave: "FM-1 に保存", wheelFactory: "初期の配置に戻す",
+    wheelSounds: "白鍵: SOUND", wheelNotes: "黒鍵: NOTE エンジン", wheelEmpty: "（空き）",
+    wheelReading: "読み込み中", wheelSaved: "保存しました。電源を切っても残ります。", wheelRefused: "FM-1 がこの配置を受け付けませんでした。もう一度読み込んでください。",
+    wheelOld: "この FM-1 はホイールの設定に対応していません。最新の SQRL-1 をインストールしてください。",
+    wheelBad: { twice: "同じナットが二つの鍵盤にあります。", welded: "RUDIMENT は自分の鍵盤から動かせません。", missing: "このファームウェアにないナットです。" },
+  },
+  en: {
+    intro: "Connect the FM-1 by USB. This page works in desktop Chrome or Edge.",
+    warn: "Do not unplug the USB cable while writing, and keep this tab in front until it says Done.",
+    perm: "The browser will ask to let this site \"control and reprogram your MIDI devices\". Allow it: that is how the firmware is sent to the FM-1.",
+    install: "Install", other: "日本語", ready: "Ready to install: SQRL-1 ", copy: "Copy log", copied: "Copied",
+    editor: "Editor (after installing: edit sounds and sequences from the computer)",
+    manual: "Manual", notes: "Release notes", issues: "Issues",
+    source: "Source:", basedOn: "Built on",
+    direct: "Connect the USB cable directly to the computer. No probe or Transporter is needed.",
+    brick: "The FM-1 checks the whole file before it erases anything, and it writes only the firmware area. An interrupted write resumes when you press Install again. If an FM-1 still will not start, recovery needs the FM-1 Transporter, a DIY tool (an RP2040 board wired to the FM-1's USB lines):",
+    beta: "SQRL-1 is databurn's firmware for the FM-1. It is not made or endorsed by M-VAVE. No warranty: use it at your own risk.",
+    back: "To go back to the official firmware, download official V15, FM-1.fwsc, from M-VAVE's download page (FM-1, \"PC Firmware\") and choose it below. This page checks that it is V15, saves a complete backup, then installs it.",
+    backFile: "Only the unmodified V15 is accepted. The file is checked in this browser and is not sent to a server. M-VAVE's own updater, M-UPGRADE (under \"PC Software\"), does not see an FM-1 running SQRL-1, so go back with this button first; after that M-UPGRADE works as it does on stock firmware. On Windows, close Chrome or Edge before you run M-UPGRADE.",
+    stockTitle: "Return to official V15", stockFile: "Official FM-1.fwsc", stockGo: "Back up and return to official V15",
+    stockBackup: "Current music, saved music, sound banks, samples and settings are saved first. Older firmware needs a SQRL-1 update for complete backups. To restore an archive later, reinstall SQRL-1 and use the editor.",
+    stockRecovery: "Resume an interrupted update: I already saved a complete backup to this computer",
+    stockValid: "Official V15 verified", stockConfirm: "Official V15 cannot open SQRL-1 music. Continue only if the complete backup is saved on this computer.",
+    stockNeedBackup: "An update loader cannot export a backup. Select resume only if you have already saved a complete backup.",
+    stockUnsupported: "This firmware cannot make a complete backup. Install the current SQRL-1 first.",
+    backup: "Saving complete backup ", stockError: "Cannot validate official firmware: ",
+    nomidi: "This browser cannot do it. Open the page in desktop Chrome or Edge.", loadfail: "Could not load: ",
+    browser: "Firefox and Safari cannot install firmware here. Open the page in desktop Chrome or Edge.",
+    mobile: "Phones and tablets cannot install firmware here. Open the page in Chrome or Edge on a computer.",
+    badsum: "The downloaded file does not match its checksum, so nothing was installed. Reload the page. If it happens again, report it under Issues.",
+    checking: "Checking the FM-1", resuming: "Resuming an interrupted SQRL-1 install", resumingStock: "Resuming an interrupted return to official V15",
+    busy: "Another tab is already updating the FM-1.",
+    running: "Installed: {now}, this page: {page}", official: "official V",
+    replaceFelucca: "This FM-1 is running Felucca. Installing replaces its firmware with SQRL-1, which reads Felucca's saved music and sounds. If you have music on it that matters, make a complete backup with Felucca's editor first. Continue?",
+    onOpen: "This FM-1 is running M-VAVE's FM1 Open. Installing SQRL-1 over it would erase its projects and samples, and has not been tested. Back up your projects and samples in M-VAVE's workbench, use its Restore original V15, then install SQRL-1.",
+    onOpenStock: "This FM-1 is running M-VAVE's FM1 Open. To return it to official V15, use M-VAVE's workbench (Restore original V15).",
+    replace: "This FM-1 is not running SQRL-1. Installing replaces its firmware with SQRL-1. Whether official V15's own saved presets and patterns survive has not been checked, and this page cannot back them up. Continue?",
+    start: "Starting", verify: "Verifying", loader: "Switching to update mode", write: "Writing",
+    reboot: "Restarting", done: "Done", doneSqrl: "Done. The FM-1 now runs SQRL-1: hold HOME to open the wheel. Getting started, in the manual, covers the first five minutes.", stopped: "Stopped. Replug the USB cable and press Install again.",
+    error: "Error: ",
+    denied: "MIDI (SysEx) access was not allowed. Allow MIDI in the site settings (address bar) and press Install again.",
+    notfound: "FM-1 not found. Use a USB data cable straight into the computer, close Bitwig or any other DAW or app using the FM-1's MIDI port, or restart the browser, and press Install again.",
+    model: "The connected device is not an FM-1.",
+    lost: "The USB connection was lost. Replug it and press Install again.",
+    noloader: "The FM-1 in update mode was not found. Unplug and replug the FM-1, or restart the computer, and press Install again (the FM-1 stays in update mode until the install finishes).",
+    noreturn: "The FM-1 did not come back. Power-cycle it. If it starts in update mode, press Install again. If the screen stays dark, see the recovery note above and report it under Issues.",
+    mismatch: "Written, but the FM-1 reports another version. Copy the log and report it under Issues. It reports: ",
+    badpkg: "The file to install is damaged. Reload the page.",
+    leave: "Writing. Do not close the page.",
+    license: "GPL-3.0, no warranty. Source:",
+    stockLost: "Stopped. Replug the USB cable, tick \"Resume an interrupted update\" and press \"Back up and return to official V15\" again. (Install would put SQRL-1 back instead.)",
+    stockNotSqrl: "The FM-1 did not answer. If the FM-1 runs SQRL-1, close Bitwig or any other DAW or app using the FM-1's MIDI port, or restart the browser, then press the button again. If it already runs official V15 or an older Felucca, there is nothing to return from.",
+    badreq: "The FM-1 asked for something unexpected. Copy the log and report it under Issues.",
+    wheelTitle: "Set up your wheel",
+    wheelAbout: "Choose the NOTE engine on each black key of the wheel (hold HOME). The white keys hold the eight SOUNDs and do not change. On the device, open the wheel, hold GLO and press a black key.",
+    wheelRead: "Read from the FM-1", wheelSave: "Save to the FM-1", wheelFactory: "Restore default layout",
+    wheelSounds: "White keys: SOUND", wheelNotes: "Black keys: NOTE engine", wheelEmpty: "(empty)",
+    wheelReading: "Reading", wheelSaved: "Saved. It stays after power-off.", wheelRefused: "The FM-1 refused this layout. Read it again.",
+    wheelOld: "This FM-1 cannot set its wheel from here. Install the current SQRL-1 first.",
+    wheelBad: { twice: "A nut is on two keys.", welded: "RUDIMENT stays on its own key.", missing: "This firmware has no such nut." },
+  },
+};
+const meta = /*META*/;
+let lang = (navigator.language || "en").toLowerCase().startsWith("ja") ? "ja" : "en";
+const t = (k) => TEXT[lang][k];
+let lastKey = null, lastArg = "";
+// what the FM-1 runs, read before an install: "Installed: X, this page: Y"
+let running = null;
+const pageVersion = () => meta.build ? `${meta.version}+${meta.build}` : meta.version;   // (the commit, as ABOUT shows it)
+const renderRunning = () => {
+  $("running").textContent = running ? t("running").replace("{now}", running).replace("{page}", `SQRL-1 ${pageVersion()}`) : "";
+};
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach((e) => { e.textContent = t(e.dataset.t); });
+  $("lang").textContent = t("other");
+  if (lastKey) $("status").textContent = t(lastKey) + lastArg;
+  renderRunning();
+}
+$("lang").addEventListener("click", () => { lang = lang === "ja" ? "en" : "ja"; applyLang(); });
+if (!meta.notes) $("notes-item").remove();                  // (a development build has no release notes)
+if (location.hash === "#official") $("official").open = true;
+applyLang();
+const sayK = (k, arg = "") => { lastKey = k; lastArg = arg; $("status").textContent = t(k) + arg; };
+const say = (txt) => { lastKey = null; $("status").textContent = txt; };
+// the log follows new lines unless it was scrolled up to read
+const log = (t) => {
+  const el = $("log"), follow = el.scrollTop + el.clientHeight >= el.scrollHeight - 4;
+  el.textContent += t + "\n";
+  if (follow) el.scrollTop = el.scrollHeight;
+};
+$("copy").addEventListener("click", () => navigator.clipboard.writeText($("log").textContent)
+  .then(() => { $("copy").textContent = t("copied"); setTimeout(() => { $("copy").textContent = t("copy"); }, 1500); }, () => {}));
+// one log line per stage; the bar and the status carry the count as a percentage of the reads the install takes
+// (fm1pkg.js updateReads for SQRL-1's loader; the official loader's, measured, for the return to V15)
+const STOCK_READS = { verify: 74, total: 74 + 1167 };
+let reads = STOCK_READS;
+const makeStep = ({ verify: VERIFY_REQS, total: TOTAL_REQS }) => {
+  let stage = null;
+  return (k, a) => {
+    $("bar").hidden = false;
+    if (k !== stage) { log(`${k} ${a ?? ""}`); stage = k; }
+    if (k === "verify" || k === "write") {
+      const pct = Math.min(99, Math.floor(((k === "write" ? VERIFY_REQS : 0) + (a || 0)) / TOTAL_REQS * 100));
+      $("bar").value = pct;
+      sayK(k, ` ${pct}%`);
+    } else if (k === "done") { $("bar").value = 100; sayK("done"); }
+    else if (k === "start" || k === "loader" || k === "reboot") sayK(k);
+  };
+};
+let image = null;
+
+// one thing at a time: an install, a return to V15 or a wheel action
+let writing = false, wheelBusy = false, wheelInvalid = false, stock = null, stockFileEpoch = 0, installed = false;
+function buttons() {
+  const busy = writing || wheelBusy;
+  $("go").disabled = busy || !image;
+  $("stock-go").disabled = busy || !stock;
+  $("stock-file").disabled = busy; $("stock-recovery").disabled = busy;
+  $("wheel-read").disabled = $("wheel-factory").disabled = busy;
+  $("wheel-save").disabled = busy || wheelInvalid;
+}
+// the screen stays on while writing: a sleeping laptop suspends USB, a hidden tab slows the write
+let wake = null;
+async function holdWake(on) {
+  try {
+    if (!on) { if (wake) { const w = wake; wake = null; await w.release(); } return; }
+    if (wake || !navigator.wakeLock || document.visibilityState !== "visible") return;
+    const w = await navigator.wakeLock.request("screen");
+    if (!writing) { await w.release(); return; }
+    wake = w; w.addEventListener("release", () => { if (wake === w) wake = null; });
+  } catch (_) { /* no wake lock here: the write works without it */ }
+}
+document.addEventListener("visibilitychange", () => { if (writing) holdWake(true); });  // (a hidden tab loses it)
+const lockInstaller = (on) => { writing = on; buttons(); holdWake(on); };
+// one update at a time across tabs: the lock lives only inside the callback, and a closed or reloaded tab's is freed
+const oneTab = (work) => navigator.locks
+  ? navigator.locks.request("sqrl-1-update", { ifAvailable: true }, (lock) => lock ? work() : sayK("busy"))
+  : work();
+window.addEventListener("beforeunload", (e) => { if (writing) { e.preventDefault(); e.returnValue = t("leave"); } });
+
+(async () => {
+  const env = unsupportedBrowser(navigator);
+  if (env) { sayK(env); return; }
+  if (!navigator.requestMIDIAccess) { sayK("nomidi"); return; }
+  try {
+    const r = await fetch(meta.pkg, { cache: "no-store" });
+    if (!r.ok) throw new Error(`${meta.pkg}: HTTP ${r.status}`);
+    const pkg = new Uint8Array(await r.arrayBuffer());
+    const bad = await checkPackage(pkg, meta);      // its identity and its sha256, as make_site.py recorded them
+    if (bad) { sayK(bad); return; }
+    image = logicalImage(pkg);
+    reads = updateReads(pkg);
+    sayK("ready", `${pageVersion()} (${meta.sha256.slice(0, 8)})`);   // (which build this tab holds, to match SHA256SUMS)
+    buttons();
+  } catch (e) { sayK("loadfail", e.message); }
+})();
+
+const OPEN_ID = (id) => id.model === "FM-1" && id.version >= 8000000 && id.version < 9000000;
+
+// the running firmware's name over the editor protocol's INFO; the official firmware has no INFO, its identity says it
+async function readRunning(up) {
+  const dev = await up.find((id) => !IS_OTA(id));
+  if (!dev) return null;
+  const { input, output } = dev.link; dev.link.close();
+  let info = null;
+  if (dev.id.model === "FM-1") {
+    const link = new BackupConnection(input, output);
+    try { info = archiveInfo(await link.request([1, []], { timeout: 1000, retries: 1 })).version; } catch (_) { } finally { link.close(); }
+  }
+  const m = info && /^(SQRL-1|FELUCCA) v?(.*)$/i.exec(info);
+  const felucca = !!m && m[1].toUpperCase() === "FELUCCA";
+  // FM-1_8NNNNNN: M-VAVE's FM1 Open (FM-1_8000013 is its V13); its user data lies where SQRL-1's code goes
+  const open = !m && OPEN_ID(dev.id);
+  const name = m ? `${felucca ? "Felucca" : "SQRL-1"} ${m[2]}` : open ? `M-VAVE FM1 Open V${dev.id.version - 8000000}` :
+    info || (dev.id.model === "FM-1" && dev.id.version < 900 ? t("official") + dev.id.version : dev.id.text);
+  // FM-1_95X is SQRL-1's own identity, so a lost INFO reply still counts as SQRL-1
+  const sqrl = !felucca && !open && (!!m || (dev.id.model === "FM-1" && dev.id.version >= 950));
+  return { name, sqrl, felucca, open };
+}
+
+$("go").addEventListener("click", () => {
+  if (writing || wheelBusy || !image) return;
+  return oneTab(goInstall);
+});
+async function goInstall() {
+  installed = false;
+  lockInstaller(true);
+  let up = null;
+  try {
+    let midi;
+    try { midi = await navigator.requestMIDIAccess({ sysex: true }); } catch (e) { sayK("denied"); return; }
+    up = new Updater(midi, log);
+    const step = makeStep(reads);
+    const ota = await up.find((id) => IS_OTA(id));
+    if (ota) {
+      ota.link.close();
+      sayK("resuming"); log(`resume ${meta.product}`);
+      installed = await up.resume(image, step, meta.product);
+      sayK(installed ? "done" : "stopped");
+    } else {
+      sayK("checking");
+      const now = await readRunning(up);
+      if (now) { running = now.name; renderRunning(); log(`running ${now.name}`); }
+      if (now && now.open) { sayK("onOpen"); return; }
+      if (now && !now.sqrl && !confirm(t(now.felucca ? "replaceFelucca" : "replace"))) { say(""); return; }
+      await up.install(image, meta.product, step);
+      installed = true;
+    }
+  } catch (e) {
+    if (e && e.code && TEXT[lang][e.code]) sayK(e.code, e.detail || "");
+    else sayK("error", e && e.message);
+    log(String(e && e.stack || e));
+  } finally { if (up) up.close(); lockInstaller(false); }
+  if (installed) { running = `SQRL-1 ${pageVersion()}`; renderRunning(); sayK("doneSqrl"); $("wheel").open = true; wheelRun(wheelGet); }
+}
+
+// the wheel: one short connection per action, as the editor's backup does
+let wheel = null, wheelEdit = null;
+const wheelSay = (txt) => { $("wheel-status").textContent = txt; };
+async function wheelRun(op) {
+  if (wheelBusy || writing) return;
+  wheelBusy = true; buttons(); wheelSay(t("wheelReading"));
+  let link = null, up = null;
+  try {
+    let midi;
+    try { midi = await navigator.requestMIDIAccess({ sysex: true }); } catch (e) { wheelSay(t("denied")); return; }
+    up = new Updater(midi, log);
+    const dev = await up.waitFor((id) => id.model === "FM-1", 8000);
+    if (!dev) { wheelSay(t("notfound")); return; }
+    const input = dev.link.input, output = dev.link.output; dev.link.close();
+    link = new BackupConnection(input, output);
+    const req = (r) => link.request(r, { timeout: 1500 });
+    let w;
+    try { w = await op(req); }
+    catch (e) {                                     // no reply: a firmware without the WHEEL command
+      wheelSay(e && e.code === "timeout" ? t("wheelOld") : t("error") + (e && e.message));
+      log(String(e && e.stack || e));
+      return;
+    }
+    wheel = w;
+    wheelInvalid = false;
+    wheelEdit = wheelForm($("wheel-form"), w, t, (white, black) => {
+      const bad = wheelProblem(wheel, white, black);
+      wheelInvalid = !!bad; buttons(); wheelSay(bad ? t("wheelBad")[bad] : "");
+    });
+    $("wheel-buttons").hidden = false;
+    wheelSay(w.rc ? t("wheelRefused") : op === wheelGet ? "" : t("wheelSaved"));
+  } catch (e) { wheelSay(t("error") + e.message); log(String(e && e.stack || e)); }
+  finally { if (link) link.close(); if (up) up.close(); wheelBusy = false; buttons(); }
+}
+$("wheel-read").addEventListener("click", () => wheelRun(wheelGet));
+$("wheel-factory").addEventListener("click", () => wheelRun(wheelFactory));
+$("wheel-save").addEventListener("click", () => {
+  if (!wheelEdit) return;
+  const { white, black } = wheelEdit.get();
+  wheelRun((req) => wheelSet(req, white, black));
+});
+
+$("stock-file").addEventListener("change", async () => {
+  const epoch = ++stockFileEpoch, file = $("stock-file").files[0]; stock = null; buttons();
+  if (!file) return;
+  try {
+    if (file.size !== STOCK_V15_SIZE) throw new Error("Select the unmodified official FM-1 V15 file (FM-1.fwsc).");
+    const verified = await validateStockPackage(new Uint8Array(await file.arrayBuffer()));
+    if (epoch !== stockFileEpoch) return;
+    stock = verified; sayK("stockValid"); buttons();
+  } catch (e) { if (epoch === stockFileEpoch) sayK("stockError", e.message); }
+});
+function saveArchive(archive) {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(archive)], {type:"application/json"}));
+  const a = document.createElement("a"); a.href = url; a.download = `SQRL-1-backup-${new Date().toISOString().slice(0,10)}.json`;
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+const STOCK_CODE = { lost: "stockLost", stopped: "stockLost", noloader: "stockLost" };
+$("stock-go").addEventListener("click", () => {
+  if (!stock || writing || wheelBusy) return;
+  const selected = stock;
+  return oneTab(() => goStock(selected));
+});
+async function goStock(selected) {
+  lockInstaller(true);
+  let link = null, up = null;
+  try {
+    let midi;
+    try { midi = await navigator.requestMIDIAccess({sysex:true}); } catch (e) { sayK("denied"); return; }
+    up = new Updater(midi, log);
+    const step = makeStep(STOCK_READS);
+    const loader = await up.find(id => id.model === "ota-FM-1");
+    if (loader) {
+      loader.link.close();
+      if (!$("stock-recovery").checked) { sayK("stockNeedBackup"); return; }
+      if (!confirm(t("stockConfirm"))) return;
+      sayK("resumingStock"); log(`resume ${selected.product}`);
+      sayK(await up.resume(selected.image, step, selected.product) ? "done" : "stockLost");
+    } else {
+      const device = await up.find(id => id.model === "FM-1");
+      if (!device) { sayK("notfound"); return; }
+      if (OPEN_ID(device.id)) { device.link.close(); sayK("onOpenStock"); return; }
+      const input = device.link.input, output = device.link.output; device.link.close();
+      link = new BackupConnection(input, output);
+      let info;
+      try { info = archiveInfo(await link.request([1,[]])); } catch (e) { sayK("stockNotSqrl"); return; }
+      if (!info.supported) { sayK("stockUnsupported"); return; }
+      const archive = await captureBackup((r,o) => link.request(r,o), info.version,
+        (done,total) => sayK("backup", `${Math.round(done / Math.max(1,total) * 100)}%`));
+      saveArchive(archive); link.close(); link = null;
+      if (!confirm(t("stockConfirm"))) return;
+      await up.install(selected.image, selected.product, step);
+    }
+  } catch (e) {
+    const k = e.code && STOCK_CODE[e.code] || e.code;   /* (interrupted: resume from this section, not Install) */
+    if (k && TEXT[lang][k]) sayK(k,e.detail || ""); else sayK("error",e.message);
+    log(String(e.stack || e));
+  } finally { if (link) link.close(); if (up) up.close(); lockInstaller(false); }
+}
+</script>
+</body>
+</html>

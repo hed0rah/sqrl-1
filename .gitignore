@@ -1,0 +1,7 @@
+build/
+.DS_Store
+__pycache__/
+*.fwsc
+
+# TALK word banks: your own, never committed (core.h FELUCCA_TALK)
+firmware/src/banks/

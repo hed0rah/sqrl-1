@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in SQRL-1 doesn't work as it should (one bug per issue)
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are for reproducible bugs only, one per issue. Include the nut pair in front (the header shows it) and, for an install problem, the installer's log (its Copy button).
+  - type: input
+    id: version
+    attributes:
+      label: SQRL-1 version
+      description: Tap GLO four times for ABOUT on the FM-1, or read the installer page
+      placeholder: "v1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Computer, OS and browser (if the editor, installer or USB is involved)
+      placeholder: "macOS 15.6, Chrome 140"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: A photo or short video helps.
+    validations:
+      required: true
