@@ -7,8 +7,9 @@ Docker, as `BUILDING.md` in the repository describes. The firmware is Felucca's 
 
 ## What you need
 
-- Python 3 with Pillow and fontTools (`pip3 install Pillow fonttools`): the screen's font and icons are drawn at
-  build time.
+- Python 3 with Pillow and fontTools (`pip3 install Pillow==10.2.0 fonttools`): the screen's font and icons are drawn
+  at build time. Another Pillow works, but its FreeType draws the screen's font slightly differently, and the tests
+  then fail on the manual's screens.
 - The JieLi toolchain for the FM-1's chip: `tools/get_toolchain.sh` installs it to `~/.jieli/toolchain`.
 - Three files from JieLi's AC79 SDK (Apache-2.0), which are not in this tree: `cpu/wl82/tools/uboot.boot`,
   `cfg_tool.bin` and `cfg/eq_cfg_hw.bin`, read from a clone of it:

@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: pip install Pillow fonttools
+      - run: pip install Pillow==10.2.0 fonttools==4.68.0    # the docs' screens are drawn with its FreeType 2.13.2
       - name: cache the toolchain and the SDK
         id: jieli
         uses: actions/cache@v4

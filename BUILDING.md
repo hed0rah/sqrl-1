@@ -17,7 +17,7 @@ The JieLi toolchain is Linux x86-64 only. On Linux x86-64 it runs natively; on m
 `linux/amd64` `debian:bookworm-slim` container, so it needs Docker Desktop (Rosetta on Apple silicon), with the source
 tree in a folder Docker can share, e.g. under `/Users`.
 
-- Python 3 with Pillow and fontTools: `pip3 install Pillow fonttools` (the UI font and icons are
+- Python 3 with Pillow and fontTools: `pip3 install Pillow==10.2.0 fonttools` (the UI font and icons are
   rasterised at build time)
 - The JieLi Linux toolchain (clang 4.0.1 for pi32v2, from JieLi's package server):
 
