@@ -29,6 +29,9 @@ the NOTE engine. Hold HOME and tap GLO instead to choose the pair with the knobs
 screens are generated from the firmware, and the test suite fails if they differ from the build, so they match the
 firmware they ship with. Start with [Getting started](docs/start.md).
 
+To print: a [deep dive](https://databurn.org/sqrl/docs/sqrl-1-deep-dive.pdf) (8 pages) and a
+[cheatsheet](https://databurn.org/sqrl/docs/sqrl-1-cheatsheet.pdf) (3 pages), also in [docs/apollo](docs/apollo/).
+
 ## Install
 
 The installer is a web page, [databurn.org/sqrl/install](https://databurn.org/sqrl/install/), for Chrome or Edge
