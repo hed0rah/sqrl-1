@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * ensemble: see ensemble.h */
 #include "ensemble.h"
 

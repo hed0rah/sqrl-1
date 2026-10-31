@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * shock: the shock-wave phase-distortion oscillator for the FM-1, a sine steepened the way a loud
  * tone steepens down a brass bore. The physics, the claims and the reference model are databurn's
  * phase-distortion research (its reference oscillator is tests/test_shock.cpp's yardstick): the sample read at

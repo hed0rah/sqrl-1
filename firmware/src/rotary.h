@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * rotary: a rotating-speaker cabinet as a part's insert, integer, for the FM-1's audio interrupt.
  *
  * A crossover (one pole, ~800 Hz) splits the sound between the horn (the highs) and the drum (the lows). Each

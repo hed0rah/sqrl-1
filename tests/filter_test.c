@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * (databurn's test_filter.c, built against the firmware's copy)
  *   cc -std=c99 -O2 -Wall -Wextra -Wdouble-promotion -Ifirmware/src firmware/src/filter.c tests/filter_test.c -lm */
 /* filter's checks: the FILTER's LP, BP, HP and NOTCH responses against the analog prototype fl_mag draws (passband,

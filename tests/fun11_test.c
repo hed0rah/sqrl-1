@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* FUN11, SQRL-1's project format (firmware/src/project.c proj_pack11, proj_unpack11), on the shell's host build.
  *   cc -O1 -w -DFELUCCA_SHELL=1 -Ibuild/gen -Ifirmware/src -Itests -o build/host/fun11_test tests/fun11_test.c -lm
  *   build/host/fun11_test [build/host/fun10_stock.bin]        (the stock FUN10 from tests/mk_fun10.c)

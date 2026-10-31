@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah
+ * Copyright (C) 2026 databurn
  * The lizard oscillator core. */
 /* lizard oscillator modes for the FM-1, after the Vinicius Electrik Lizard v2.
  *

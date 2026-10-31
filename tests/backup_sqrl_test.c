@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* SQRL-1's full backup out and back (firmware/src/editor_backup.c in the FELUCCA_SHELL build), on tests/backup_test.c's
  * simulated NOR flash:
  *   cc -O1 -w -DFELUCCA_SHELL=1 -Ibuild/gen -Ifirmware/src -Itests -o build/host/backup_sqrl_test tests/backup_sqrl_test.c -lm

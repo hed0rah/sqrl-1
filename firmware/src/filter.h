@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * filter: a state-variable filter and a tuned comb, as inserts, for the FM-1's audio interrupt (its single-precision
  * FPU; no libm, no double).
  *

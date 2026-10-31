@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* A stock-built FUN10 project, for tests/fun11_test.c (SQRL-1 loads stock projects): track 1's step 1 a 4-note chord,
  * step 2 a single note with NUDGE and RATCH, the rest the defaults.
  *   cc -O1 -w -Ibuild/gen -Ifirmware/src -Itests -o build/host/mk_fun10 tests/mk_fun10.c -lm

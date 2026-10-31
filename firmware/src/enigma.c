@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * ENIGMA: a Turing Machine, the looping random sequencer of Tom Whitwell's Music Thing module, as a
  * note engine. The idea as Hemisphere Suite's TM applet and ENIGMA app play it (Jason Justian, MIT);
  * written fresh here for the FM-1's note-engine API.

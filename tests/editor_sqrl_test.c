@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* SQRL-1's step in the editor protocol (firmware/src/editor.c, FELUCCA_SHELL): INFO 4A 01 06; STEP_SET and STEP_GET
  * with notes 5 and 6 and the six JUST values after the condition (23 step bytes); an editor of four notes (15 bytes)
  * writing back what it read keeps the fifth and sixth notes and the JUST, and one that changed a note drops that

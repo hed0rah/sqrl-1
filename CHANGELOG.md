@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.1
+
+- Credits and copyright name databurn: ABOUT, the source headers, LICENSING.md and the manual's credits page.
+  Nothing else changes.
+
 ## v1.0.0
 
 The first release. SQRL-1 is built on Felucca 1.5.6 and keeps its engines, voices, sequencer, effects, storage and

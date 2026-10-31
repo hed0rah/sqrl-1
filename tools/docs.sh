@@ -1,6 +1,6 @@
 #!/bin/sh
 # SPDX-License-Identifier: GPL-3.0-only
-# Copyright (C) 2026 hed0rah
+# Copyright (C) 2026 databurn
 # SQRL-1's manual from the firmware: tests/doc_dump.c walks the shell (data and screens), tools/gen_docs.py writes
 # docs/*.md and docs/img/ from it and docs/src/, and with --site DIR the HTML site. Run after one ./build.sh.
 #   tools/docs.sh [--site DIR]

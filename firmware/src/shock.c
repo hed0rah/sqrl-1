@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * shock: see shock.h. */
 #include "shock.h"
 #include "shock_table.h"

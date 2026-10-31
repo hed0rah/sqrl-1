@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * SHOCK: a sine steepened into a shock wave, the way a loud note steepens down a brass bore, for
  * Felucca 1.5.6 / SQRL-1 (shock.c; the physics and its reference model are databurn's phase-distortion research).
  * sigma, the distortion, is the whole timbre: 0 a sine, 1 the shock forming, past it a sawtooth that

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * organ_table.h: one cycle of a sine for organ.c, generated. */
 #ifndef ORGAN_TABLE_H
 #define ORGAN_TABLE_H

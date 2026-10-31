@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * chordplay: how a struck chord's notes are played, apart from which notes they are. Integer, header only, for the
  * audio interrupt. The notes come in ascending, the lowest first.
  *   STRM  -127 .. 127: the notes start one after another across up to CP_STRUM_MS, low to high when positive, high

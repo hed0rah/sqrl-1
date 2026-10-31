@@ -40,4 +40,4 @@ the slot picker ([The wheel](../wheel.md)). It plays on part 3, which it shares 
 ## Where it comes from
 
 Elementary cellular automata and their rule numbers are from Stephen Wolfram's 1983 papers. ALIVE is SQRL-1's own
-(`firmware/src/shell.c`). Nibs, the cat, is the acidcat mascot, hed0rah's art (CC-BY-SA-4.0).
+(`firmware/src/shell.c`). Nibs, the cat, is the acidcat mascot, databurn's art (CC-BY-SA-4.0).

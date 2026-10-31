@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* the player's work kept where a knob, a preset, a Program Change, a clear or an erase would replace it: one level of
  * undo on REC held through its first ring (UNDO BEAT, UNDO SOUND, UNDO TAKE), driven as tests/shell_test.c drives it.
  *   cc -O1 -w -DFELUCCA_SHELL=1 -Ibuild/gen -Ifirmware/src -Itests -o build/host/dataloss_test tests/dataloss_test.c -lm */

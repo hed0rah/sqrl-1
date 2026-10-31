@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * MOUTH: a phoneme voice that sings, for SQRL-1. Each note sings the next piece of a
  * phrase (mouth.c: 40 phonemes gliding through syllable.c's formant synthesizer); its last vowel holds
  * while the key does, and the rest of the piece plays when the key is let go.

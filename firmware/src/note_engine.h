@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * note_engine: what makes the notes, apart from what makes the sound. A note engine takes keys and
  * the clock and gives note events; a sound engine (FM6, LIZARD, TALK, SYLLABLE...) plays them. On
  * the FM-1 both run in the audio interrupt, so everything here is integer, bounded and allocation

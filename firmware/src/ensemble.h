@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * ensemble: the chorus bus in three characters, on one short line the caller owns.
  *   CHOR  one tap swept by a sine (9 .. 26 ms), the plain chorus, mono
  *   ENS   three taps around 7 ms, each swept by a slow sine (RATE) plus a faster vibrato, a third of a cycle apart:

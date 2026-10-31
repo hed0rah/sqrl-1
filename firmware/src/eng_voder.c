@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * VODER: Homer Dudley's Voder (1939) on the FM-1's keys. The first ten white keys open the ten
  * bands, the first three black keys are the stops (p t k), the fourth is the wrist bar's hiss.
  * Pitch comes from PEDAL, a knob, as it came from a foot pedal; the keys never change it. It had

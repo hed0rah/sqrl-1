@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* The HOME pictures of the engines the flower stood in for (ANALOG PHASE LOFI SAMPLE VOICE TRIO WHEEL GRAIN PHYS
  * NOISE SHOCK SLICE DRUMS), and the helpers they share. Part of the shell: shell.c includes it where they sit in
  * its drawing code, after the other pictures, so they use its primitives (sh_line, sh_rect, sh_text, the SC_

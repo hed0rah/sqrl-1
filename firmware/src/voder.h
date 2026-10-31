@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * voder: Homer Dudley's Voder (Bell Labs, 1939) as a playable filter bank. One source per part, a
  * buzz (a band-limited sawtooth: the relaxation oscillator) or a hiss, chosen by the wrist bar
  * (here: the HISS key and a mix), at a pitch from the foot pedal (here: a knob). Ten band-pass

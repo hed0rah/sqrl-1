@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* SQRL-1's shell (firmware/src/shell.c) on the host: the stock UI test's stubs and power-on (tests/ui_test.c, its main
  * renamed), then the shell driven frame by frame as main.c drives it with FELUCCA_SHELL=1.
  *   cc -O1 -w -DFELUCCA_SHELL=1 -Ibuild/gen -Ifirmware/src -Itests -o build/host/shell_test tests/shell_test.c -lm */

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * SYLLABLE: consonant-vowel syllables from the keys, for SQRL-1. Each note sings a
  * consonant into a vowel (Klatt-style cascade/parallel formants, syllable.c); the vowel holds while
  * the key does. VOICE (eng_formant.c) sings the vowels; this is the consonants VOICE does not have.

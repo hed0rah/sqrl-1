@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* The engines' levels against the limiter, SQRL-1 build (fx.c ENG_TRIM, PRE_TRIM; eng_mouth.c MOUTH_GAIN).
  *   build/host/level_test                           (run_tests.sh builds and runs it)
  *

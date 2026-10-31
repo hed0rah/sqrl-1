@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * ORGAN: a tonewheel organ's drawbars, for SQRL-1 (organ.c). Nine drawbars in eight knobs: the
  * console's first six, then TOP for its three highest together (1 3/5', 1 1/3', 1'), then PERC.
  *

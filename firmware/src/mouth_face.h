@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * mouth_face: the lips a vowel makes, drawn from its formants, for MOUTH's screen. After the plaster casts of the
  * mouth Marage made around 1900, one per vowel (I, E, A, O, OU).
  *

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-only
-// Copyright (C) 2026 hed0rah
+// Copyright (C) 2026 databurn
 // SQRL-1's wheel over the editor protocol (EDITOR_PROTOCOL.md "The wheel", command 112): which SOUND sits on each
 // white key C4..C5 and which NOTE engine on each black key. The device checks every rule again; this side only keeps
 // the choices valid so a set is never refused. Used by the installer and the editor, with any request(cmd, args)

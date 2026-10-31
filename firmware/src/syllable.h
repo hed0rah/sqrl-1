@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * syllable: a consonant-vowel syllable from a Klatt (1980) style cascade/parallel formant
  * synthesizer, integer only, no allocation, one caller-owned struct per voice. The port of a
  * reference model (not published): the same breakpoint tracks bit for bit, the same filters in

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * lts: English text to MOUTH phonemes by letter-to-sound rules, after the US Naval Research
  * Laboratory's (Elovitz, Johnson, McHugh and Shore 1976, NRL Report 7948, a US government work in
  * the public domain). Each rule is left context [match] right context = phonemes; the first rule of

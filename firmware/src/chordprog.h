@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * chordprog: CHORD's PROG, a progression under the held chord. After Ornament & Crime's Acid Curds (Patrick Dowling,
  * Tim Churches, Max Stadler, MIT), whose progressions of scale degrees step on a clock in a direction; written fresh
  * for SQRL-1's CHORD (chord.c, seq.c).

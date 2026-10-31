@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * organ: a tonewheel organ's drawbars, percussion and key click, integer, for the FM-1's audio interrupt.
  *
  * The nine drawbars are harmonics of the 16' pitch: 16' 1, 5 1/3' 3, 8' 2 (the note), 4' 4, 2 2/3' 6, 2' 8,

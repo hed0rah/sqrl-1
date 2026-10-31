@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* The shell: the FM-1's user interface when the firmware is built with FELUCCA_SHELL=1. It replaces Felucca's
  * ui_input, ui_leds and ui_draw (main.c) with a wheel of "nuts". Each nut pairs a SOUND (an engine with its own
  * remembered sound) with a NOTE engine (what plays it: the keys as they are, CHORD, ALIVE, or a note_engine.h
@@ -10220,13 +10220,13 @@ static void sh_draw_about(void)
         sh_text(92, 88 + (int32_t)i * 17, &AF_S, ROWS[i][1] ? ROWS[i][1] : n, SC_BONE);
     }
     sh_rect(20, 194, 200, 1, SC_FAINT);
-    sh_text_c(120, 204, &AF_S, "Art CC BY-SA 4.0, hed0rah", SC_MID);
+    sh_text_c(120, 204, &AF_S, "Art CC BY-SA 4.0, databurn", SC_MID);
 }
 
 /* LEGAL (GLO's page after ABOUT): the notices GPL-3.0 section 5(d) asks an interactive program to show */
 static void sh_draw_legal(void)
 {
-    static const char *const L[] = {"SQRL-1 " SQRL_VERSION, "(C) 2026 hed0rah", "", "Based on Felucca " FELUCCA_VERSION,
+    static const char *const L[] = {"SQRL-1 " SQRL_VERSION, "(C) 2026 databurn", "", "Based on Felucca " FELUCCA_VERSION,
                                     "(C) 2026 Leo Kuroshita,", "H\xFCgelton Instruments", "",
                                     "GPL-3.0-only, NO WARRANTY", "github.com/hed0rah/sqrl-1"};
     uint32_t i;

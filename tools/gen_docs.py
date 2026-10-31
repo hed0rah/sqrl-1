@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-# Copyright (C) 2026 hed0rah
+# Copyright (C) 2026 databurn
 """gen_docs.py: SQRL-1's manual, as markdown in docs/ and as a static site, from one source.
 
   tools/gen_docs.py [--site OUT_DIR]

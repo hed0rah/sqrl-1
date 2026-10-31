@@ -11,7 +11,7 @@ body:
     attributes:
       label: SQRL-1 version
       description: Tap GLO four times for ABOUT on the FM-1, or read the installer page
-      placeholder: "v1.0.0"
+      placeholder: "v1.0.1"
     validations:
       required: true
   - type: input

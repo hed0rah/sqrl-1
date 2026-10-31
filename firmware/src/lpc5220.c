@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT AND BSD-3-Clause
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * lpc5220: the TMS5220 generator, written from a reference model of the chip (not published), which follows MAME's
  * tms5220.cpp (the non-"perfect interpolation" path). The tables (ENERGY, PITCH, K,
  * CHIRP, INTERP's chip row) are MAME's tms5110r.hxx, checked by their authors against decapped TMS5220NL

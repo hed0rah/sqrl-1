@@ -8,11 +8,11 @@ same terms. SQRL-1's source is at [github.com/hed0rah/sqrl-1](https://github.com
 
 ## SQRL-1's own parts
 
-The shell, the wheel and LIZARD are hed0rah's, under GPL-3.0-only like the rest. The parts that came from databurn,
-an audio research group, are MIT: SYLLABLE, VODER and MOUTH (with its letter-to-sound rules), ORGAN, SHOCK,
+The shell, the wheel and LIZARD are databurn's, under GPL-3.0-only like the rest. The parts that came from databurn's
+research are MIT: SYLLABLE, VODER and MOUTH (with its letter-to-sound rules), ORGAN, SHOCK,
 TONNETZ, ENIGMA, S+H, CANON and HARP, CHORD's playing and PROG, the SHAPE stage, the tape echo, LOOP's tape, the chorus modes, and
 the ROTOR, RESON and VOWEL inserts. CHORD extends Felucca's chord keys and
-ALIVE is part of the shell; both are GPL-3.0-only. Art and marks, the squirrel and Nibs included, are hed0rah's, under
+ALIVE is part of the shell; both are GPL-3.0-only. Art and marks, the squirrel and Nibs included, are databurn's, under
 CC-BY-SA-4.0; the names are not licensed as trademarks.
 
 ## From elsewhere

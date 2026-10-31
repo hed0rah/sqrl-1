@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* The manual's data, from the shell itself (docs/, tools/gen_docs.py): every nut entered as a player enters it,
  * every page it has walked, and each knob's label, range, power-on value and value names written as JSON; with
  * SHELL_SHOTS=dir, the screen of each page beside it (raw RGB565, tools/raw2png.py).

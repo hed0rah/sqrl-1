@@ -9,11 +9,11 @@ same terms. SQRL-1's source is at [github.com/hed0rah/sqrl-1](https://github.com
 
 ## SQRL-1's own parts
 
-The shell, the wheel and LIZARD are hed0rah's, under GPL-3.0-only like the rest. The parts that came from databurn,
-an audio research group, are MIT: SYLLABLE, VODER and MOUTH (with its letter-to-sound rules), ORGAN, SHOCK,
+The shell, the wheel and LIZARD are databurn's, under GPL-3.0-only like the rest. The parts that came from databurn's
+research are MIT: SYLLABLE, VODER and MOUTH (with its letter-to-sound rules), ORGAN, SHOCK,
 TONNETZ, ENIGMA, S+H, CANON and HARP, CHORD's playing and PROG, the SHAPE stage, the tape echo, LOOP's tape, the chorus modes, and
 the ROTOR, RESON and VOWEL inserts. CHORD extends Felucca's chord keys and
-ALIVE is part of the shell; both are GPL-3.0-only. Art and marks, the squirrel and Nibs included, are hed0rah's, under
+ALIVE is part of the shell; both are GPL-3.0-only. Art and marks, the squirrel and Nibs included, are databurn's, under
 CC-BY-SA-4.0; the names are not licensed as trademarks.
 
 ## From elsewhere
@@ -46,67 +46,67 @@ Every other file there is Felucca's, GPL-3.0-only, copyright Leo Kuroshita.
 
 | File | Licence | Copyright |
 | --- | --- | --- |
-| `canon.c` | MIT | 2026 hed0rah |
-| `chordplay.h` | MIT | 2026 hed0rah |
-| `chordprog.h` | MIT | 2026 hed0rah |
-| `div64.c` | GPL-3.0-only | 2026 hed0rah |
-| `eng_lizard.c` | GPL-3.0-only | 2026 hed0rah |
-| `eng_loop.c` | GPL-3.0-only | 2026 hed0rah |
-| `eng_mouth.c` | MIT | 2026 hed0rah |
-| `eng_organ.c` | MIT | 2026 hed0rah |
-| `eng_shock.c` | MIT | 2026 hed0rah |
-| `eng_syllable.c` | MIT | 2026 hed0rah |
-| `eng_talk.c` | MIT | 2026 hed0rah |
-| `eng_voder.c` | MIT | 2026 hed0rah |
-| `enigma.c` | MIT | 2026 hed0rah |
-| `ensemble.c` | MIT | 2026 hed0rah |
-| `ensemble.h` | MIT | 2026 hed0rah |
-| `filter.c` | MIT | 2026 hed0rah |
-| `filter.h` | MIT | 2026 hed0rah |
+| `canon.c` | MIT | 2026 databurn |
+| `chordplay.h` | MIT | 2026 databurn |
+| `chordprog.h` | MIT | 2026 databurn |
+| `div64.c` | GPL-3.0-only | 2026 databurn |
+| `eng_lizard.c` | GPL-3.0-only | 2026 databurn |
+| `eng_loop.c` | GPL-3.0-only | 2026 databurn |
+| `eng_mouth.c` | MIT | 2026 databurn |
+| `eng_organ.c` | MIT | 2026 databurn |
+| `eng_shock.c` | MIT | 2026 databurn |
+| `eng_syllable.c` | MIT | 2026 databurn |
+| `eng_talk.c` | MIT | 2026 databurn |
+| `eng_voder.c` | MIT | 2026 databurn |
+| `enigma.c` | MIT | 2026 databurn |
+| `ensemble.c` | MIT | 2026 databurn |
+| `ensemble.h` | MIT | 2026 databurn |
+| `filter.c` | MIT | 2026 databurn |
+| `filter.h` | MIT | 2026 databurn |
 | `fm6_core.c` | Apache-2.0 | 2012 Google Inc. |
 | `grids_map.h` | GPL-3.0-or-later | 2012 Emilie Gillet |
-| `harp.c` | MIT | 2026 hed0rah |
-| `lizard.c` | GPL-3.0-only | 2026 hed0rah |
-| `lizard.h` | GPL-3.0-only | 2026 hed0rah |
-| `lpc5220.c` | MIT AND BSD-3-Clause | 2026 hed0rah |
-| `lpc5220.h` | MIT | 2026 hed0rah |
-| `lts.c` | MIT | 2026 hed0rah |
-| `lts.h` | MIT | 2026 hed0rah |
-| `lzshape.c` | MIT | 2026 hed0rah |
-| `lzshape.h` | MIT | 2026 hed0rah |
-| `mouth.c` | MIT | 2026 hed0rah |
-| `mouth.h` | MIT | 2026 hed0rah |
-| `mouth_face.h` | MIT | 2026 hed0rah |
-| `note_engine.h` | MIT | 2026 hed0rah |
-| `organ.c` | MIT | 2026 hed0rah |
-| `organ.h` | MIT | 2026 hed0rah |
-| `organ_table.h` | MIT | 2026 hed0rah |
-| `phrase_rec.c` | GPL-3.0-only | 2026 hed0rah |
+| `harp.c` | MIT | 2026 databurn |
+| `lizard.c` | GPL-3.0-only | 2026 databurn |
+| `lizard.h` | GPL-3.0-only | 2026 databurn |
+| `lpc5220.c` | MIT AND BSD-3-Clause | 2026 databurn |
+| `lpc5220.h` | MIT | 2026 databurn |
+| `lts.c` | MIT | 2026 databurn |
+| `lts.h` | MIT | 2026 databurn |
+| `lzshape.c` | MIT | 2026 databurn |
+| `lzshape.h` | MIT | 2026 databurn |
+| `mouth.c` | MIT | 2026 databurn |
+| `mouth.h` | MIT | 2026 databurn |
+| `mouth_face.h` | MIT | 2026 databurn |
+| `note_engine.h` | MIT | 2026 databurn |
+| `organ.c` | MIT | 2026 databurn |
+| `organ.h` | MIT | 2026 databurn |
+| `organ_table.h` | MIT | 2026 databurn |
+| `phrase_rec.c` | GPL-3.0-only | 2026 databurn |
 | `phys_dsp.c` | MIT | 2020 Electrosmith, Corp, Emilie Gillet |
 | `phys_symp.c` | MIT | 2015 Emilie Gillet |
-| `resonator.c` | MIT | 2026 hed0rah |
-| `resonator.h` | MIT | 2026 hed0rah |
-| `rotary.c` | MIT | 2026 hed0rah |
-| `rotary.h` | MIT | 2026 hed0rah |
-| `shell.c` | GPL-3.0-only | 2026 hed0rah |
-| `shell_pics.c` | GPL-3.0-only | 2026 hed0rah |
-| `shock.c` | MIT | 2026 hed0rah |
-| `shock.h` | MIT | 2026 hed0rah |
-| `shock_table.h` | MIT | 2026 hed0rah |
-| `snh.c` | MIT | 2026 hed0rah |
-| `spell.c` | GPL-3.0-only | 2026 hed0rah |
-| `sqrl_version.h` | GPL-3.0-only | 2026 hed0rah |
-| `stackmon.c` | GPL-3.0-only | 2026 hed0rah |
-| `syllable.c` | MIT | 2026 hed0rah |
-| `syllable.h` | MIT | 2026 hed0rah |
-| `tapedly.c` | MIT | 2026 hed0rah |
-| `tapedly.h` | MIT | 2026 hed0rah |
-| `tapeloop.c` | MIT | 2026 hed0rah |
-| `tapeloop.h` | MIT | 2026 hed0rah |
-| `tonnetz.c` | MIT | 2026 hed0rah |
-| `voder.c` | MIT | 2026 hed0rah |
-| `voder.h` | MIT | 2026 hed0rah |
-| `vowel.c` | MIT | 2026 hed0rah |
-| `vowel.h` | MIT | 2026 hed0rah |
+| `resonator.c` | MIT | 2026 databurn |
+| `resonator.h` | MIT | 2026 databurn |
+| `rotary.c` | MIT | 2026 databurn |
+| `rotary.h` | MIT | 2026 databurn |
+| `shell.c` | GPL-3.0-only | 2026 databurn |
+| `shell_pics.c` | GPL-3.0-only | 2026 databurn |
+| `shock.c` | MIT | 2026 databurn |
+| `shock.h` | MIT | 2026 databurn |
+| `shock_table.h` | MIT | 2026 databurn |
+| `snh.c` | MIT | 2026 databurn |
+| `spell.c` | GPL-3.0-only | 2026 databurn |
+| `sqrl_version.h` | GPL-3.0-only | 2026 databurn |
+| `stackmon.c` | GPL-3.0-only | 2026 databurn |
+| `syllable.c` | MIT | 2026 databurn |
+| `syllable.h` | MIT | 2026 databurn |
+| `tapedly.c` | MIT | 2026 databurn |
+| `tapedly.h` | MIT | 2026 databurn |
+| `tapeloop.c` | MIT | 2026 databurn |
+| `tapeloop.h` | MIT | 2026 databurn |
+| `tonnetz.c` | MIT | 2026 databurn |
+| `voder.c` | MIT | 2026 databurn |
+| `voder.h` | MIT | 2026 databurn |
+| `vowel.c` | MIT | 2026 databurn |
+| `vowel.h` | MIT | 2026 databurn |
 
 The full licence texts travel with the firmware package and are in the repository's `LICENSES/`.

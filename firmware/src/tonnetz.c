@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * TONNETZ: a triad walking Euler's Tonnetz by the three neo-Riemannian moves, each of which keeps
  * two notes and moves one by a step or two, so any walk voice-leads smoothly. After the idea of
  * Ornament & Crime's Automatonnetz and Harrington 1200 (Patrick Dowling, Tim Churches, MIT);

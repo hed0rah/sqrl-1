@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * vowel: puts a part's sound through a vowel, as a talk box or a formant filter does. An insert, integer, for the
  * FM-1's audio interrupt; it pairs with MOUTH (mouth.c) and uses its vowels.
  *

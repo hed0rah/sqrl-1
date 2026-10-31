@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * mouth: a phoneme speech engine that sings, in the spirit of the 1982 software mouths and their
  * singing mode, written from published phonetics only. 40 ARPAbet-like phonemes (Peterson and Barney
  * 1952 vowels, Klatt 1980 consonants and bandwidths) glide into each other at the control rate and

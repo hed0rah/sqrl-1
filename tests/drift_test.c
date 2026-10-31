@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* Timing drift on SQRL-1's shell build: every timed subsystem over 64 bars at 97, 120 and 133 BPM, each event's sample
  * time against its grid computed in double from the tempo (a quarter 60 * FS / BPM samples, no rounding).
  *   cc -O1 -w -DFELUCCA_SHELL=1 -Ibuild/gen -Ifirmware/src -Itests -o build/host/drift_test tests/drift_test.c -lm

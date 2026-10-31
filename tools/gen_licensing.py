@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-# Copyright (C) 2026 hed0rah
+# Copyright (C) 2026 databurn
 """gen_licensing.py [--check]: LICENSING.md's per-file table, from the SPDX headers of the tracked source files.
 
 Every source file under firmware/, tools/, tests/ and web/ (and build.sh) must carry an SPDX-License-Identifier in

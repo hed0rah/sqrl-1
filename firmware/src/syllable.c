@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * syllable: the port of a reference model (not published; syllable.h names the model and the sources).
  * Tracks: integers, the same as the reference bit for bit. Filters: Q30 coefficients computed once
  * a tick by polynomial exp and cos (no floats, no tables), Q16 signals, int64 products.

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* MOUTH's phrases U1..U8 (eng_mouth.c mouth_user) kept over power-off, SQRL-1: a record of their own in the settings
  * sector (storage.c st_tail), written with the settings and read back at power-on (shell.c), and an object of the full
  * backup (editor_backup.c, id 10). A wrong magic, version, length or CRC loads no phrases. Needs FELUCCA_FLASH */

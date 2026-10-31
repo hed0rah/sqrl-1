@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* SPELL, MOUTH's third EDIT page (shell.c): a phrase built syllable by syllable. A syllable is an onset of up to three
  * consonants, one vowel and a coda of up to three; the phrase is at most SPL_MAX phonemes, MOUTH's bytes with
  * MTH_EOS on each syllable's last phoneme and MTH_EOW on each word's. The knobs edit the syllable under the cursor:

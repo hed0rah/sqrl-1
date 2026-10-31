@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * TALK: a TMS5220 (Speak & Spell family) voice for SQRL-1. Keys play the pitch,
  * each note speaks a word from a bank; the frames can be sped up, the chip's clock bent, bits
  * flipped as they are read. The generator is lpc5220.c, bit-exact at its defaults to a reference

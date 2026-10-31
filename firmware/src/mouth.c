@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * mouth: phonemes in sequence, sung through syllable.c (read mouth.h first).
  *
  * Each phoneme is a segment with a body (its targets and sources, which may change inside it: a

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * S+H: sample and hold into the scale, after Ornament & Crime's Quantermain and its internal sources (Patrick
  * Dowling, Tim Churches, Max Stadler, MIT), with stepped bytebeats as Viznutcracker plays them; written fresh for
  * the FM-1's note-engine API.

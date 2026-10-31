@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * lts: the NRL letter-to-sound rules (Elovitz, Johnson, McHugh and Shore 1976, NRL Report 7948),
  * written out again for MOUTH's phonemes: the report's AX is AH here and WH is W, as MOUTH has
  * neither. Rules with an apostrophe are left out (words here are letters only).

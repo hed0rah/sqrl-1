@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * resonator: a bank of tuned resonators that ring at the notes the part is playing, so noise, speech, plucks or
  * drums sound as the held chord. An insert, integer, for the FM-1's audio interrupt; after the Quadraverb's
  * resonator and the Disting EX filter bank, our own code.

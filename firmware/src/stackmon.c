@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* The stacks' high-water marks, for the console's `stack` (SQRL-1). At power-on, with the interrupts still off,
  * stack_paint fills both stacks with STACK_PAINT (the one it runs on only below the live sp), never
  * their guard bands (app.ld _guard0, _guard1). stack_unused scans from a stack's far end for the first word that is

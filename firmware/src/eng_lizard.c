@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* LIZARD: the oscillator modes of the Vinicius Electrik Lizard v2 (lizard.c, the lizard core:
  * uint32 phases, float, polyBLEP edges), one core per voice, into Felucca's low-pass.
  *

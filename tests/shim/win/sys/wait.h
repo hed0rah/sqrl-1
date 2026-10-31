@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* the host tests on Windows (clang, mingw's headers: tests/run_host_win.sh). mingw has no fork: a test that reaches
  * one ends there as SKIP (exit 77), never as a pass. Anywhere else this is the system's own <sys/wait.h> */
 #ifndef _WIN32

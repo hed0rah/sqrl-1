@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * voder: see voder.h. Band-passes are RBJ's (0 dB peak), two in cascade per key; coefficients from
  * polynomial sin and cos, Q30. The buzz is a sawtooth with a polyBLEP at its wrap. */
 #include "voder.h"

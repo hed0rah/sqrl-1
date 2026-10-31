@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-# Copyright (C) 2026 hed0rah
+# Copyright (C) 2026 databurn
 """gen_cheatsheet.py [--check]: the quick sheet, web/sheet/index.html, two landscape pages (front, back) to print.
 
 Its fonts are web/sheet/fonts/ (Inter Tight and DejaVu Sans Mono, cut to the characters the sheet uses); make_site.py
@@ -607,7 +607,7 @@ VERSION = version()
 def build():
     page = f"""<!doctype html>
 <!-- SPDX-License-Identifier: GPL-3.0-only
-     Copyright (C) 2026 hed0rah
+     Copyright (C) 2026 databurn
      Made by tools/gen_cheatsheet.py: edit that, not this. -->
 <html lang="en">
 <head>

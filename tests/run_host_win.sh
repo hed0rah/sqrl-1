@@ -1,6 +1,6 @@
 #!/bin/sh
 # SPDX-License-Identifier: GPL-3.0-only
-# Copyright (C) 2026 hed0rah
+# Copyright (C) 2026 databurn
 # the SQRL-1 shell's host suites without the JieLi toolchain: on Windows with clang and mingw's headers (fork from
 # tests/shim/win, a SKIP there), and the same on any host. Each suite says ok, SKIP (exit 77: it needed fork) or
 # FAIL, its log in build/host-win/; any FAIL fails the run, and a SKIP is never counted as ok.

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * tapeloop: a loop of tape you record onto and play from the keys, integer, for the FM-1's audio interrupt. After
  * the tape loops of the 1960s and Expert Sleepers' Augustus Loop; our own code.
  *

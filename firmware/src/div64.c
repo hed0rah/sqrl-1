@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* 64-bit division for the compiler's helper calls: the speech engines (TALK, SYLLABLE, VODER) divide 64-bit
  * values at control rate and at the oscillator's edges, and the freestanding build links no libgcc. Restoring
  * shift-subtract, at most 64 steps: fine where it runs, never per sample of a whole block. A divide by 0 gives

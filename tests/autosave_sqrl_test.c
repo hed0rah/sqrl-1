@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* SQRL-1's autosave (project.c autosave_*, shell.c sh_quiet / sh_as_boot, main.c): the shell driven as tests/shell_test.c
  * drives it, on simulated NOR flash (FELUCCA_FLASH 1, which shell_test.c itself is built without), with main.c's loop
  * (shell_input, settings_poll, autosave_poll) and its power-on (RAM lost, the settings from flash, sh_as_boot):

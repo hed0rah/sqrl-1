@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * HARP: an Omnichord's chord buttons and strum plate on the FM-1's keys. The twelve keys F3..E4 pick the chord's
  * root; the fifteen keys F4..G5 are the plate's strings, each a tone of the chord, climbing through the octaves:
  * a finger run across them strums it. Holding a root key can also sound the chord under the plate (PAD), as the

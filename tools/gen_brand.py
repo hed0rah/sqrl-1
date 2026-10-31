@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-# Copyright (C) 2026 hed0rah
+# Copyright (C) 2026 databurn
 """gen_brand.py OUT.h: the shell's brand pictures (assets/brand/*.png) as run-length images, and Nibs's face as
 ALIVE's hidden seed.
 
@@ -17,7 +17,7 @@ ALIVE's hidden seed.
 Made from those at build time: peek84 (Nibs's line art at 84 px: the idle peek, whole on the screen) and sqrl52
 (the lockup's squirrel, above its rule, 52 px tall: the peek's bouncing logo).
 
-Copyright (C) 2026 hed0rah. The art is CC-BY-SA-4.0 (assets/brand/LICENSE.txt); the names and marks: Trademarks in
+Copyright (C) 2026 databurn. The art is CC-BY-SA-4.0 (assets/brand/LICENSE.txt); the names and marks: Trademarks in
 LICENSING.md. A colour picture becomes a palette of up to 32 (RGB565, alpha 0..256) and a byte stream:
 bits 0..4 the palette index, bits 5..7 the run length - 1 (rows wrap). A mask (greyscale) is one ink, drawn in the
 colour given: its bytes are bits 0..3 the coverage (0..15), bits 4..7 the run - 1; 0xF0 (16 clear) is followed by a

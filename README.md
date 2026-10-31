@@ -86,7 +86,7 @@ engine.
 
 ## Licence
 
-SQRL-1 is a modified version of Felucca 1.5.6: hed0rah forked it on 10.12.2026 and has changed it since. Felucca is
+SQRL-1 is a modified version of Felucca 1.5.6: databurn forked it on 10.12.2026 and has changed it since. Felucca is
 by Leo Kuroshita (Hügelton Instruments).
 
 SQRL-1 is free software under Felucca's licence, GPL-3.0-only ([LICENSE](LICENSE)). Some parts keep their own

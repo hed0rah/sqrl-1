@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah
+ * Copyright (C) 2026 databurn
  * The lizard oscillator core, included into the firmware by eng_lizard.c. */
 #include "lizard.h"
 

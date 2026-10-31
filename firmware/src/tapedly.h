@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * tapedly: a tape echo for a shared delay bus, and a pre-delay line for a reverb's send. Integer only, for the
  * FM-1's audio interrupt; the caller owns the buffers (int16, so they can live in whatever memory the platform
  * has spare).

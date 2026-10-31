@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * lzshape: what shapes a voice after its oscillator, for the FM-1 (the SHAPE pages). LIZARD's
  * page is UNI WARP FOLD SYM; every other engine's is FOLD SYM CRUSH DOWN, the same stage on its voice.
  *

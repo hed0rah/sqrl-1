@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * CANON: an analogue shift register for the keys, after Ornament & Crime's CopierMaschine (Patrick Dowling, Tim
  * Churches, Max Stadler, MIT); written fresh for the FM-1's note-engine API.
  *

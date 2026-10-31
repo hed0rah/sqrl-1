@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* LOOP: a tape loop you record onto and play from the keys (tapeloop.c, from databurn, MIT). The tape is the tape
  * echo's own (fx.c dly_buf): while LOOP is the SOUND in front it holds the tape and the echo is off; the delay send
  * bus is what the record head hears, so LOOP records the parts sending to the delay (a pair running behind, the

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* The shell build's heaviest sounds, measured on the host (instructions and ns per 44.1 kHz sample, one part):
  * CHORD's six notes with BASS on FM6, LIZARD's drawn unison with SHAPE, against the references the device already
  * plays. Instructions come from the kernel (Linux perf_event_open, user space only; macOS proc_pid_rusage), the

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-only
- * Copyright (C) 2026 hed0rah */
+ * Copyright (C) 2026 databurn */
 /* SQRL-1's sound per drum (eng_drum.c drum_lane_d): a lane's DECY lengthens its tail and TUNE moves its pitch, the
  * other lanes as designed; all at 0, the kit is bit for bit as before.
  *   cc -O1 -w -DFELUCCA_SHELL=1 -Ibuild/gen -Ifirmware/src -Itests -o build/host/drumlane_test tests/drumlane_test.c -lm */

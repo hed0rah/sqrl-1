@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT
- * Copyright (c) 2026 hed0rah
+ * Copyright (c) 2026 databurn
  * lpc5220: the TMS5220 speech generator as a playable voice. Integer only, no allocation, all
  * state in one caller-owned struct (arena-ready). See lpc5220.c for the tables' BSD-3 notice.
  *

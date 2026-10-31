@@ -1,5 +1,5 @@
 The pictures in this directory (Nibs, the databurn wordmark, the SQRL-1 squirrel, mark and lockup, and Nibs's
-ALIVE seed) are Copyright (C) 2026 hed0rah and licensed under CC-BY-SA-4.0: see LICENSES/CC-BY-SA-4.0.txt.
+ALIVE seed) are Copyright (C) 2026 databurn and licensed under CC-BY-SA-4.0: see LICENSES/CC-BY-SA-4.0.txt.
 
 The licence covers the pictures, not the names. "SQRL-1", "databurn" and "Nibs" are not licensed as trademarks:
 see Trademarks in LICENSING.md.
